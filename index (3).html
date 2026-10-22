@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Crucial for smartphone responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>TranslateMe - Language Translator</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header class="app-header">
+      <div class="logo">
+        <i class="fa-solid fa-language"></i>
+        <span>TranslateMe</span>
+      </div>
+      <p class="subtitle">Fast, simple language translation</p>
+    </header>
+
+    <div class="translator-card">
+      <!-- Controls Top Bar -->
+      <div class="language-controls">
+        <select id="sourceLang" class="lang-select"></select>
+
+        <button id="swapBtn" class="icon-btn swap-btn" title="Swap languages">
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        </button>
+
+        <select id="targetLang" class="lang-select"></select>
+      </div>
+
+      <!-- Text Areas -->
+      <div class="panels-wrapper">
+        <!-- Input Panel -->
+        <div class="panel input-panel">
+          <textarea 
+            id="sourceText" 
+            placeholder="Type or paste text here..." 
+            maxlength="1000"
+          ></textarea>
+          
+          <div class="panel-footer">
+            <div class="tools">
+              <button id="speakSourceBtn" class="icon-btn" title="Dengarkan">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+              <button id="clearBtn" class="icon-btn" title="Hapus teks">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <span id="charCount" class="char-count">0 / 1000</span>
+          </div>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="panel output-panel">
+          <textarea 
+            id="targetText" 
+            placeholder="The translation results will appear here..." 
+            readonly
+          ></textarea>
+          
+          <div class="panel-footer">
+            <div class="tools">
+              <button id="speakTargetBtn" class="icon-btn" title="Listen">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+              <button id="copyBtn" class="icon-btn" title="Salin terjemahan">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+            <span id="statusIndicator" class="status-indicator"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="action-wrapper">
+        <button id="translateBtn" class="translate-btn">
+          <i class="fa-solid fa-bolt"></i> Translate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

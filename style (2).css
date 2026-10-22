@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh; /* dynamic height on mobile browsers */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f8fafc;
+  padding: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #38bdf8;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Card */
+.translator-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+/* Controls (Fixed overflowing on mobile) */
+.language-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.lang-select {
+  flex: 1 1 0;
+  min-width: 0; /* Prevents flexbox item from overflowing */
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 12px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.lang-select:focus {
+  border-color: #38bdf8;
+}
+
+.swap-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Panels */
+.panels-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.panel {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.panel textarea {
+  flex: 1;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8fafc;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: none;
+}
+
+.panel textarea::placeholder {
+  color: #64748b;
+}
+
+.panel-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tools {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn {
+  background: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: #334155;
+  color: #38bdf8;
+}
+
+.char-count, .status-indicator {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Action Button */
+.action-wrapper {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.translate-btn {
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.translate-btn:active {
+  transform: scale(0.98);
+}
+
+.translate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile & Smartphone Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    padding: 12px 8px;
+  }
+
+  .translator-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .panels-wrapper {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .panel {
+    min-height: 160px;
+  }
+
+  .action-wrapper .translate-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+  }
+}
