@@ -70,7 +70,7 @@ async function translate() {
     return;
   }
 
-  statusIndicator.textContent = "Menerjemahkan...";
+  statusIndicator.textContent = "Translating...";
   translateBtn.disabled = true;
 
   try {
