@@ -378,7 +378,7 @@ async function translate() {
     return;
   }
 
-  statusIndicator.textContent = "Menerjemahkan...";
+  statusIndicator.textContent = "Translate...";
   translateBtn.disabled = true;
 
   try {
@@ -416,14 +416,14 @@ async function translate() {
 
     if (translated && translated.trim() !== "") {
       targetText.value = translated;
-      statusIndicator.textContent = "Selesai";
+      statusIndicator.textContent = "Finished";
     } else {
-      targetText.value = "Terjemahan tidak ditemukan.";
-      statusIndicator.textContent = "Gagal";
+      targetText.value = "Translation not found.";
+      statusIndicator.textContent = "Fail";
     }
   } catch (error) {
     console.error(error);
-    targetText.value = "Gagal terhubung ke server terjemahan.";
+    targetText.value = "Failed to Connect to Translation Server.";
     statusIndicator.textContent = "Error";
   } finally {
     translateBtn.disabled = false;
